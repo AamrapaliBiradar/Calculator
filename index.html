@@ -64,14 +64,14 @@
 </head>
 <body class="bd">
 	<div class="calc">
-		<form>
+		<form name="case">
 			<div>
 				<input type="text" name="op" disabled class="op">
 			</div>
 			<div>
 				<input type="button" value="AC" onclick="op.value=''" class="ac" id="allclear">
-				<input type="button" value="C" onclick="op+=''" class="operator">
-				<input type="button" value="%" onclick="op+='%'" class="operator">
+				<input type="button" value="C" onclick="dlfun()" class="operator">
+				<input type="button" value="%" onclick="op.value+='%'" class="operator">
 			</div>
 			<div>
 				<input type="button" value="7" onclick="op.value+='7'">
@@ -99,6 +99,14 @@
 			</div>
 		</form>
 	</div>
+
+	<script>
+		
+		function dlfun(){
+			var nm = document.case.op.value.slice(0,-1);
+			document.case.op.value=nm;
+		}
+	</script>
 
 </body>
 </html>
